@@ -1,3 +1,4 @@
+1.0 Print the name of the ID "ID02" from the dictionary dict_employee_IDs
 dict_aisle = { "A100": ['bananas', 'milk', 'bread'],
  "A101": ['pens', 'pencils', 'paper'],
  "A102": ['canned_peas', 'canned_carrots', 'canned_beans'],
@@ -8,6 +9,7 @@ print(dict_aisle)
 
 ID02 is David Thompson
 
+1.1 Delete aisle "A102" from the dictionary dict_aisle
 dict_aisle = { "A100": ['bananas', 'milk', 'bread'],
  "A101": ['pens', 'pencils', 'paper'],
  "A102": ['canned_peas', 'canned_carrots', 'canned_beans'],
@@ -16,3 +18,74 @@ del dict_aisle['A102'] # Delete aisle A102
 print(dict_aisle)
 
 {'A100': ['bananas', 'milk', 'bread'], 'A101': ['pens', 'pencils', 'paper'], 'A103': ['plates', 'glasses', 'table_cloth']}
+
+2.0 Prompt the user to enter the name of the item: a.If found, display the aisle number of the item. b.if not found, display a message "Item Not Found!!"
+aisles = {"A100": ['bananas', 'milk', 'bread'],
+ "A101": ['pens', 'pencils', 'paper'],
+ "A102": ['canned peas', 'canned carrots', 'canned beans'],
+ "A103": ['plates', 'glasses', 'table cloth']}
+ 
+# Prompt user
+user_input = input('What are you looking for : ')
+# Get the Aisle
+for aisle in aisles.keys():
+ aisle_list = aisles[aisle]
+ if user_input in aisle_list:
+ print(user_input, "is on aisle", aisle)
+ 
+What are you looking for : paper
+paper is on aisle A101
+
+2.1 Add the following aisle to the dict_aisle: a.Aisle No: B101 b.Items on aisle: kids toys, kids clothes
+#Solution
+aisles = {"A100": ['bananas', 'milk', 'bread'],
+ "A101": ['pens', 'pencils', 'paper'],
+ "A102": ['canned peas', 'canned carrots', 'canned beans'],
+ "A103": ['plates', 'glasses', 'table cloth']}
+# Add new aisle B101 with Kids_toys, Kids_cloths
+aisles["B101"] = ['kids toys', 'kids clothes']
+# Printing using for loop
+for aisle in aisles:
+ print(aisle, ":", aisles[aisle])
+ 
+ A100 : ['bananas', 'milk', 'bread']
+A101 : ['pens', 'pencils', 'paper']
+A102 : ['canned peas', 'canned carrots', 'canned beans']
+A103 : ['plates', 'glasses', 'table cloth']
+B101 : ['kids toys', 'kids clothes']
+
+3.0 Prompt the user to enter the quantity of each fruit and display the total cost of the purchase.
+inventory = {"banana": 0.25,
+ "watermelon": 5.25,
+ "orange": 0.50,
+ "peer": 0.40,
+ "apple": 0.30,
+ "kiwi": 0.75, }
+# Print the use
+print('Welcome to the ABC fruit shop. Please enter the quantity :')
+user_quantity_bananas = int(input('Bananas : '))
+user_quantity_Watermelons = int(input('Watermelons : '))
+user_quantity_oranges = int(input('orange : '))
+user_quantity_peers = int(input('peer : '))
+user_quantity_apples = int(input('apple : '))
+user_quantity_kiwis = int(input('kiwi : '))
+# Calculating cost
+total_cost_bananas = user_quantity_bananas * inventory.get("banana")
+total_cost_Watermelons = user_quantity_Watermelons * inventory.get("watermelon")
+total_cost_oranges = user_quantity_oranges * inventory.get("orange")
+total_cost_peers = user_quantity_peers * inventory.get("peer")
+total_cost_apples = user_quantity_apples * inventory.get("apple")
+total_cost_kiwis = user_quantity_kiwis * inventory.get("kiwi")
+total_cost = total_cost_kiwis + total_cost_bananas + total_cost_apples + total_cost_oranges + \
+ total_cost_peers + total_cost_Watermelons
+print("Please pay ", total_cost) 
+
+Welcome to the ABC fruit shop. Please enter the quantity :
+Bananas : 2
+Watermelons : 3
+orange : 1
+peer : 4
+apple : 5
+kiwi : 2
+Please pay 21.35
+
